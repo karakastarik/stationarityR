@@ -25,6 +25,5 @@ For 0.1.0 release, only ```summary_stationarity(model,lag)``` function is availa
 
 You can see the example dataframe which returned by ```summary_stationarity(model,lag)``` function below.
 
-![Output](https://github.com/karakastarik/stationarityR/blob/master/www/output.PNG)
-
+![Output](https://github.com/karakastarik/stationarityR/blob/main/www/output.PNG)
 The function uses KPSS, ADF and PP unit root tests and decides whether the series is stationary or not according to the lag length, type and significance level (1%, 2.5%, 5% and 10%) as seen above. If the value is ```pass```, it means the series is stationary, and if it is ```fail```, it means the series is not stationary. You can reach this conclusion by examining statistics and critical values(10pct, 5pct...).
