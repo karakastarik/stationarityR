@@ -1,0 +1,15 @@
+Package: stationarityR
+Title: Automating time series stationarity tests
+Version: 0.1.0
+Authors@R: 
+    person(given = "Ahmet Tarik",
+           family = "Karakas",
+           role = c("aut", "cre"),
+           email = "atarikkarakas@gmail.com")
+Description: Automating time series stationarity tests. This package automates Kwiatkowski–Phillips–Schmidt–Shin (KPSS), Augmented Dickey–Fuller (ADF) and Phillips–Perron (PP) unit root tests and saves the results as a dataframe.
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Depends: R (>= 4.0.0), dplyr, urca
+Imports: dplyr,urca
