@@ -6,10 +6,15 @@ Authors@R:
            family = "Karakas",
            role = c("aut", "cre"),
            email = "atarikkarakas@gmail.com")
-Description: Automating time series stationarity tests. This package automates Kwiatkowski–Phillips–Schmidt–Shin (KPSS), Augmented Dickey–Fuller (ADF) and Phillips–Perron (PP) unit root tests and saves the results as a dataframe.
+Description: Automating time series stationarity tests. This package automates Kwiatkowski–Phillips–Schmidt–Shin (KPSS), Augmented Dickey–Fuller (ADF) and Phillips–Perron (PP) unit root tests by calculating every possible situation for lag length, type and significance level (1%, 2.5%, 5% and 10%) and saves the results as a dataframe.
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Depends: R (>= 4.0.0), dplyr, urca
 Imports: dplyr,urca
+Language:en-US
+License: GPL-2
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
