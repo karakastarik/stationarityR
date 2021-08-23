@@ -7,9 +7,9 @@
 #' @param lag Integer lag length. For example, if the value is \code{10}, results will come for lag lengths of \code{1:10}.
 #' @export
 #' @examples
-#' summary.all(ts_model,10)
+#' summary_all(ts_model,10)
 
-summary.all <- function(model,lag) {
+summary_all <- function(model,lag) {
 
   if (lag>20) {
     stop("Lag can not be greater than 20.")

@@ -7,9 +7,9 @@
 #' @param lag Integer lag length. For example, if the value is \code{10}, results will come for lag lengths of \code{1:10}.
 #' @export
 #' @examples
-#' summary.adf(ts_model,10)
+#' summary_adf(ts_model,10)
 
-summary.adf <- function(model,lag) {
+summary_adf <- function(model,lag) {
   
   if (lag>20) {
     stop("Lag can not be greater than 20.")

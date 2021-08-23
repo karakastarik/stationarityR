@@ -7,9 +7,9 @@
 #' @param lag Integer lag length. For example, if the value is \code{10}, results will come for lag lengths of \code{1:10}.
 #' @export
 #' @examples
-#' summary.pp(ts_model,10)
+#' summary_pp(ts_model,10)
 
-summary.pp <- function(model,lag) {
+summary_pp <- function(model,lag) {
   
   if (lag>20) {
     stop("Lag can not be greater than 20.")
