@@ -14,7 +14,7 @@ RoxygenNote: 7.1.1
 Depends: R (>= 4.0.0), dplyr, urca
 Imports: dplyr,urca
 Language:en-US
-License: GPL-2
+License: GPL-3
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
