@@ -1,3 +1,4 @@
+
 #' @title KPSS Test result.
 #'
 #' @description
@@ -11,9 +12,14 @@
 
 summary_kpss <- function(model,lag) {
   
-  if (lag>20) {
-    stop("Lag can not be greater than 20.")
-  }
+  # if (lag>20 || typeof(lag) != "double") {
+  #   stop("Lag value can not be greater than 20 and it must be integer.")
+  # }
+  # 
+  # if (as.character(model$call[[1]])!="lm") {
+  #   stop("model must be lm(y ~ x) object.")
+  # }
+  assert(model,lag)
   
   variables <-c(as.data.frame(model$model),as.data.frame(model$residuals)) %>% as.data.frame()
   
