@@ -1,4 +1,3 @@
-
 #' @title KPSS Test result.
 #'
 #' @description
@@ -10,18 +9,16 @@
 #' @examples
 #' summary_kpss(ts_model,10)
 
-summary_kpss <- function(model,lag) {
+summary_kpss <- function(model,lag=5,difference=NA) {
   
-  # if (lag>20 || typeof(lag) != "double") {
-  #   stop("Lag value can not be greater than 20 and it must be integer.")
-  # }
-  # 
-  # if (as.character(model$call[[1]])!="lm") {
-  #   stop("model must be lm(y ~ x) object.")
-  # }
-  assert(model,lag)
+  assert_lag(lag)
+  assert_model(model)
   
-  variables <-c(as.data.frame(model$model),as.data.frame(model$residuals)) %>% as.data.frame()
+  if (!is.na(difference)) {
+    variables <- df_diff(model,difference)
+  } else {
+    variables <-c(as.data.frame(model$model),as.data.frame(model$residuals)) %>% as.data.frame()
+  }
   
   kpss_type <-c("mu","tau")
   kpss = list()

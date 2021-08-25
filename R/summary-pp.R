@@ -9,13 +9,16 @@
 #' @examples
 #' summary_pp(ts_model,10)
 
-summary_pp <- function(model,lag) {
+summary_pp <- function(model,lag=5,difference=NA) {
   
-  if (lag>20) {
-    stop("Lag can not be greater than 20.")
+  assert_lag(lag)
+  assert_model(model)
+  
+  if (!is.na(difference)) {
+    variables <- df_diff(model,difference)
+  } else {
+    variables <-c(as.data.frame(model$model),as.data.frame(model$residuals)) %>% as.data.frame()
   }
-  
-  variables <-c(as.data.frame(model$model),as.data.frame(model$residuals)) %>% as.data.frame()
   
   pp_type <- c("constant","trend")
   pp = list()

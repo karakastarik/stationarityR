@@ -4,7 +4,7 @@
 \alias{summary_adf}
 \title{ADF Test Results.}
 \usage{
-summary_adf(model, lag)
+summary_adf(model, lag = 5, difference = NA)
 }
 \arguments{
 \item{model}{fitted \code{lm(y ~ x)}  object}

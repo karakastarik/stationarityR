@@ -4,7 +4,7 @@
 \alias{summary_kpss}
 \title{KPSS Test result.}
 \usage{
-summary_kpss(model, lag)
+summary_kpss(model, lag = 5, difference = NA)
 }
 \arguments{
 \item{model}{fitted \code{lm(y ~ x)}  object}

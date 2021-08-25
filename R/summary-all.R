@@ -9,13 +9,18 @@
 #' @examples
 #' summary_all(ts_model,10)
 
-summary_all <- function(model,lag) {
+summary_all <- function(model,lag,difference=NA) {
 
-  if (lag>20) {
-    stop("Lag can not be greater than 20.")
+  assert_lag(lag)
+  assert_model(model)
+  
+  if (!is.na(difference)) {
+    variables <- df_diff(model,difference)
+  } else {
+    variables <-c(as.data.frame(model$model),as.data.frame(model$residuals)) %>% as.data.frame()
   }
+  
   kpss_type <-c("mu","tau")
-  variables <-c(as.data.frame(model$model),as.data.frame(model$residuals)) %>% as.data.frame()
 
   #loop for kpss
   kpss = list()

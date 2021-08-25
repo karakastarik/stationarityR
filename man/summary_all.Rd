@@ -4,7 +4,7 @@
 \alias{summary_all}
 \title{Aggregate KPSS, ADF and PP Test Results}
 \usage{
-summary_all(model, lag)
+summary_all(model, lag, difference = NA)
 }
 \arguments{
 \item{model}{fitted \code{lm(y ~ x)}  object}

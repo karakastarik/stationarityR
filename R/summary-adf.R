@@ -9,13 +9,16 @@
 #' @examples
 #' summary_adf(ts_model,10)
 
-summary_adf <- function(model,lag) {
+summary_adf <- function(model,lag=5,difference=NA) {
   
-  if (lag>20) {
-    stop("Lag can not be greater than 20.")
+  assert_lag(lag)
+  assert_model(model)
+  
+  if (!is.na(difference)) {
+    variables <- df_diff(model,difference)
+  } else {
+    variables <-c(as.data.frame(model$model),as.data.frame(model$residuals)) %>% as.data.frame()
   }
-  
-  variables <-c(as.data.frame(model$model),as.data.frame(model$residuals)) %>% as.data.frame()
   
   adf_type <- c("none","drift","trend")
   adf = list()

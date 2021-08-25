@@ -4,7 +4,7 @@
 \alias{summary_pp}
 \title{PP Test Results.}
 \usage{
-summary_pp(model, lag)
+summary_pp(model, lag = 5, difference = NA)
 }
 \arguments{
 \item{model}{fitted \code{lm(y ~ x)}  object}
